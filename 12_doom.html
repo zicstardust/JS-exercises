@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manupulacao de eventos</title>
+</head>
+<body>
+
+    <input type="text" id="meuInput">
+    <p id="mensagem"></p>
+
+    <script>
+        //Ao clicar no botao a div vai aparecer
+        let input = document.getElementById("meuInput");
+        let mensagem = document.getElementById("mensagem");
+
+        input.addEventListener("input", function(){
+            mensagem,textContent = "Texto Atual: " + input.value;
+        });
+    </script>
+
+
+</body>
+</html>

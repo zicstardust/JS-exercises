@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manupulacao de eventos</title>
+</head>
+<body>
+
+    <button id="meuBotao">Clique-me</button>
+    <div id="minhaDiv"> Você clicou no botão</div>
+
+    <script>
+        //Ao clicar no botao a div vai aparecer
+        let botao = document.getElementById("meuBotao");
+        let div = document.getElementById("minhaDiv");
+
+        div.hidden = true;
+
+        botao.addEventListener("click", function(){
+            div.hidden = false;
+        });
+    </script>
+
+
+</body>
+</html>

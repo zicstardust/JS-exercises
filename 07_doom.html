@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selecao de Classes</title>
+</head>
+<body>
+
+    <p class="paragrafo">Esse é um paragrafo</p>
+    <p class="paragrafo">Esse é outro paragrafo</p>
+
+
+    <script>
+        //Selecionar elementos  por Classe
+        let elementoPorClasse = document.getElementsByClassName("paragrafo");
+
+        for (let i = 0; i < elementoPorClasse.length; i++){
+            console.log(elementoPorClasse[i].textContent);
+        }
+        
+        //Saida:
+        //Esse é um paragrafo
+        //Esse é outro paragrafo
+
+    </script>
+
+
+</body>
+</html>
