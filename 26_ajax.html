@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <title>Carregar dados de API JSON  com jquery</title>
+</head>
+<body>
+ 
+    <button id="loadJsonData">Carregar JSON</button>
+    <div id="jsonOutput"></div>
+
+    <script>
+             
+        $(document).ready(function() {
+            $("#loadJsonData").click(function() {
+                $.ajax({
+                    url: "https://dummyjson.com/products/1",
+                    type: "GET",
+                    dataType: "json",
+                    success: function(data) {
+                        console.log(data)
+                        
+                        $("#jsonOutput").html("<h2>" + data.title + "</h2>");
+                        
+                        $("#jsonOutput").append("<p>" + data.description + "</p>");
+
+                        for (var i = 0; i < data.images.length; i++){
+                            $("#jsonOutput").append("<img src='" + data.images[i] + "' alt='Product Image " + (i + 1) + "' style='width:100px'>")
+                        }
+                    },
+                    error: function(error){
+                        console.error("Erro ao carregar JSON:", error);
+                    }
+                });
+            });
+        });
+
+    </script>
+
+
+</body>
+</html>

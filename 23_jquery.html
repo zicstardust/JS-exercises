@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <title>Efeitos visuais</title>
+</head>
+<body>
+
+ 
+    <button id="mostrar">Mostrar</button>
+    <button id="ocultar">Ocultar</button>
+    <div id="meuElemento">Texto para mostrar/ocultar</div>
+   
+    
+    <button id="alterar">Alterar visibilidade</button>
+    <div id="meuOutroElemento">Texto visivel</div>
+
+    <script>
+        //Exemplo 1
+        $('#mostrar').click(function(){
+            $('#meuElemento').show();
+        });
+
+        $('#ocultar').click(function(){
+            $('#meuElemento').hide();
+        });
+
+
+        //Exemplo 2
+        $("#alterar").click(function(){
+            $("#meuOutroElemento").toggle();
+        });
+    </script>
+
+
+</body>
+</html>

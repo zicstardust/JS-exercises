@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carregar dados de API JSON</title>
+</head>
+<body>
+ 
+    <button id="loadJsonData">Carregar JSON</button>
+    <div id="jsonOutput"></div>
+
+    <script>
+             
+       document.getElementById("loadJsonData").addEventListener("click", function(){
+
+           fetch("https://dummyjson.com/products/1")
+           .then(response => response.json())
+           .then(data => {
+            console.log(data)
+            let novo = data.title + " - " + data.price
+            document.getElementById("jsonOutput").innerHTML = novo;
+           })
+           .catch(error => console.error("Erro ao carregar JSON", error));
+       });        
+                
+
+    </script>
+
+
+</body>
+</html>

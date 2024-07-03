@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carregar dados de API</title>
+</head>
+<body>
+ 
+    <button id="loadData">Carregar dados</button>
+    <div id="output"></div>
+
+    <script>
+             
+       document.getElementById("loadData").addEventListener("click", function(){
+            var xhr = new XMLHttpRequest();
+
+            xhr.onreadystatechange = function(){
+                if (xhr.readyState === 4 && xhr.status === 200){
+                    var data = JSON.parse(xhr.responseText);
+                    console.log(data);
+                    //let novo_valor = data.title + " " + data.completed;
+                    let novo_valor = data.title + " " + data.description
+                    document.getElementById("output").innerHTML = novo_valor;
+                }
+            };
+
+            xhr.open("GET", "https://dummyjson.com/products/1", true);
+            xhr.send();
+       });        
+                
+
+    </script>
+
+
+</body>
+</html>

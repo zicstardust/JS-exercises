@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <title>Manipulacao de eventos</title>
+</head>
+<body>
+
+    <button id="meuBotao">Clique-me</button>
+    <div id="minhaDiv" hidden>Texto oculto</div>
+    <div id="outraDiv" style="display: none"> Outra div</div>
+
+    <script>
+        $("#meuBotao").click(function(){
+            $("#minhaDiv").show();
+
+            //altera atributo estilo
+            $("outraDiv").attr('style', 'display: block');
+        });
+
+    </script>
+
+
+</body>
+</html>
